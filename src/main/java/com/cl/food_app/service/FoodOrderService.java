@@ -17,8 +17,9 @@ import org.springframework.stereotype.Service;
 
 
 import com.cl.food_app.dao.FoodOrderDAO;
-
+import com.cl.food_app.dao.StaffDAO;
 import com.cl.food_app.dto.FoodOrder;
+import com.cl.food_app.dto.Staff;
 import com.cl.food_app.exception.IdNotFoundException;
 
 import com.cl.food_app.util.ResponseStructure;
@@ -32,6 +33,8 @@ public class FoodOrderService {
 
    @Autowired
    FoodOrderDAO dao;
+   @Autowired
+   StaffDAO staffDAO;
 
 
 
@@ -40,7 +43,8 @@ public class FoodOrderService {
 
 
        
-        
+	   //Staff staff = staffDAO.getStaffById(id).get();
+       //foodorder.setStaff(staff);  
 	   ResponseStructure<FoodOrder> structure = new ResponseStructure<FoodOrder>();
        structure.setMessage("foodorder saved sucessfully");
         structure.setStatus(HttpStatus.CREATED.value());

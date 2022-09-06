@@ -11,12 +11,23 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Menu {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@OneToOne
 	BranchManager branchmanager;
 	
@@ -28,7 +39,8 @@ public class Menu {
 		this.branchmanager = branchmanager;
 	}
 
-	@OneToMany(mappedBy = "menu",cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
+	@JsonIgnore
 	List<FoodProduct>foods;
 
 	

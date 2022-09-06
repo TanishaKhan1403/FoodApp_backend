@@ -24,12 +24,12 @@ Customer customer;
         FoodOrder foodOrder=dao.getFoodOrderById(id).get();
         customer.setGST(0.18);
         customer.setServiceCost(10);
-        double total=foodOrder.getPrice();
-        customer.setCost(total+(total*customer.getGST())+total*customer.getServiceCost());
+//        double total=foodOrder.getPrice();
+//        customer.setCost(total+(total*customer.getGST())+total*customer.getServiceCost());
         message.setFrom("manju8105635884@gmail.com");
         message.setTo("manju8105635884@gmail.com");
         message.setSubject("Test Subject");
-        message.setText("Your Order Id is=" +foodOrder.getId()+"\n" + " Your Food Price is="+foodOrder.getPrice()+"\n"+" GST=1%,Service=1%."+"\n" +"Total Price="+customer.getCost());
+//        message.setText("Your Order Id is=" +foodOrder.getId()+"\n" + " Your Food Price is="+foodOrder.getPrice()+"\n"+" GST=1%,Service=1%."+"\n" +"Total Price="+customer.getCost());
         javaMailSender.send(message);
         return message.getText();
         

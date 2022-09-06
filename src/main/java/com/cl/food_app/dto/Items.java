@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Items {
@@ -14,11 +15,14 @@ public class Items {
 	private String type;
 	private String quantity;
 	private int productId;
-	private double price;
+	private int price;
 	private String image;
+	
+
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -46,10 +50,10 @@ public class Items {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public String getImage() {

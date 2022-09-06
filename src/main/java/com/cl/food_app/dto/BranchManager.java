@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class BranchManager {
 	
@@ -26,6 +28,7 @@ public class BranchManager {
 		this.role = role;
 	}
 	@OneToOne(mappedBy = "branchmanager",cascade = CascadeType.ALL)
+	@JsonIgnore
 	Menu menu;
 	
 	

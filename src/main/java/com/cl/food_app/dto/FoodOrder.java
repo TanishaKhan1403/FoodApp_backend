@@ -21,7 +21,7 @@ public class FoodOrder {
 	private int orderDeliveryTime;
 	private String customerEmailId;
 	private int contactNumber;
-	private double totalPrice;
+	private int totalPrice;
 	
 	@ManyToOne
 	@JoinColumn
@@ -29,57 +29,14 @@ public class FoodOrder {
 	
 	
 	
-	public String getName() {
-		return name;
+
+	public Staff getStaff() {
+		return staff;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setStaff(Staff staff) {
+		this.staff = staff;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getAbout() {
-		return about;
-	}
-	public void setAbout(String about) {
-		this.about = about;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	public String getAvailability() {
-		return availability;
-	}
-	public void setAvailability(String availability) {
-		this.availability = availability;
-	}
-	public String getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-	public Branch getBranch() {
-		return branch;
-	}
-	public void setBranch(Branch branch) {
-		this.branch = branch;
-	}
-	private String name;
-	private String type;
-	private String about;
-	private double price;
-	private String availability;
-	private String quantity;
 	
-	@ManyToOne
-	Branch branch;
 	
 	public int getId() {
 		return id;
@@ -123,10 +80,10 @@ public class FoodOrder {
 	public void setContactNumber(int contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public double getTotalPrice() {
+	public int getTotalPrice() {
 		return totalPrice;
 	}
-	public void setTotalPrice(double totalPrice) {
+	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 

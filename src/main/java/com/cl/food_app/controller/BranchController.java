@@ -30,7 +30,7 @@ import com.cl.food_app.util.ResponseStructure;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200/")
 @RequestMapping("/api")
 public class BranchController {
 
